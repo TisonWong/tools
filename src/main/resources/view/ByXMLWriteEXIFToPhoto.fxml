@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ambit.app.controller.ByXMLWriteEXIFToPhoto">
+    <children>
+        <TextField layoutX="14.0" layoutY="78.0" prefHeight="23.0" prefWidth="459.0" promptText="选择解析文件XML或TXT" fx:id="xml_text" />
+        <Button layoutX="488.0" layoutY="78.0" mnemonicParsing="false" onAction="#selectXmlFile" prefHeight="23.0" prefWidth="85.0" text="选取文件" />
+        <Button fx:id="start_btn" layoutX="214.0" layoutY="205.0" mnemonicParsing="false" onAction="#start" prefHeight="39.0" prefWidth="173.0" text="Start" />
+        <TextField fx:id="photo_text" layoutX="14.0" layoutY="34.0" prefHeight="23.0" prefWidth="459.0" promptText="照片所在目录" />
+        <Button layoutX="488.0" layoutY="34.0" mnemonicParsing="false" onAction="#selectPhotoFolder" prefHeight="23.0" prefWidth="85.0" text="选取文件夹" />
+      <ProgressBar fx:id="progressBarId" layoutX="14.0" layoutY="262.0" prefHeight="18.0" prefWidth="577.0" progress="0.0" />
+      <TextArea fx:id="statusBar" layoutX="14.0" layoutY="288.0" prefHeight="92.0" prefWidth="577.0" />
+      <TextField fx:id="exportText" layoutX="14.0" layoutY="117.0" prefHeight="23.0" prefWidth="459.0" promptText="导出目录" />
+      <Button fx:id="exportBtn" layoutX="488.0" layoutY="117.0" mnemonicParsing="false" onAction="#selectExportFolder" prefHeight="23.0" prefWidth="85.0" text="选取文件夹" />
+      <TextField fx:id="threadCountText" editable="false" layoutX="14.0" layoutY="158.0" promptText="线程数量" text="10" />
+      <CheckBox fx:id="startMultithreadingCheckBox" disable="true" layoutX="191.0" layoutY="162.0" mnemonicParsing="false" text="使用多线程模式" />
+    </children>
+</AnchorPane>

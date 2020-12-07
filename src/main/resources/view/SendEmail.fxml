@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ambit.app.controller.SendEmail">
+   <children>
+      <TextField fx:id="excelPathText" layoutX="114.0" layoutY="21.0" prefHeight="23.0" prefWidth="339.0" />
+      <Label layoutX="31.0" layoutY="25.0" text="Excel" />
+      <Button layoutX="485.0" layoutY="21.0" mnemonicParsing="false" onAction="#browseExcelPath" text="选取Excel" />
+      <Button fx:id="startBtn" layoutX="278.0" layoutY="135.0" mnemonicParsing="false" onAction="#startSend" text="Send Email" />
+      <TextArea fx:id="statusWindow" layoutX="14.0" layoutY="186.0" prefHeight="200.0" prefWidth="580.0" />
+      <TextField fx:id="subjectText" layoutX="114.0" layoutY="54.0" prefHeight="23.0" prefWidth="339.0" />
+      <Label layoutX="31.0" layoutY="58.0" text="Subject" />
+      <TextField fx:id="attachmentText" layoutX="114.0" layoutY="92.0" prefHeight="23.0" prefWidth="339.0" />
+      <Label layoutX="31.0" layoutY="96.0" text="Attachment" />
+      <Button layoutX="485.0" layoutY="92.0" mnemonicParsing="false" onAction="#browseFiles" text="选取附件" />
+   </children>
+</AnchorPane>

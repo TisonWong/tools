@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ambit.app.controller.ByTXTCopyOrMovePhoto">
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="580.0" prefWidth="580.0">
+         <bottom>
+            <TextArea fx:id="state_show" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <Pane prefHeight="333.0" prefWidth="580.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="import_file" layoutX="31.0" layoutY="46.0" prefWidth="430.0" promptText="记录文档" />
+                  <TextField fx:id="export_folder" layoutX="31.0" layoutY="123.0" prefWidth="430.0" promptText="输出目录" />
+                  <Button layoutX="477.0" layoutY="46.0" mnemonicParsing="false" onAction="#browseTXTPath" text="选取文件" />
+                  <Button layoutX="477.0" layoutY="123.0" mnemonicParsing="false" onAction="#browseExportPath" text="选取目录" />
+                  <Button fx:id="startMoveBtn" layoutX="31.0" layoutY="207.0" mnemonicParsing="false" onAction="#startMove" prefHeight="40.0" prefWidth="80.0" text="执行移动" />
+                  <Button fx:id="startCopyBtn" layoutX="166.0" layoutY="207.0" mnemonicParsing="false" onAction="#startCopy" prefHeight="40.0" prefWidth="80.0" text="执行复制" />
+                  <TextField fx:id="import_folder" layoutX="31.0" layoutY="84.0" prefWidth="430.0" promptText="资源所在目录" />
+                  <Button layoutX="477.0" layoutY="84.0" mnemonicParsing="false" onAction="#browseExportPath" text="选取资源目录" />
+                  <ProgressBar fx:id="loading" layoutX="31.0" layoutY="331.0" prefHeight="27.0" prefWidth="516.0" progress="0.0" />
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

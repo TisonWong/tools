@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ambit.app.controller.Change3DSFileName">
+   <children>
+      <Button fx:id="startBtn" layoutX="284.0" layoutY="197.0" mnemonicParsing="false" onAction="#start" text="Start" />
+      <TextArea fx:id="statusText" editable="false" layoutY="239.0" prefHeight="168.0" prefWidth="600.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" />
+      <TextField fx:id="sourceFolderText" layoutX="126.0" layoutY="35.0" prefHeight="23.0" prefWidth="371.0" />
+      <Button layoutX="509.0" layoutY="35.0" mnemonicParsing="false" onAction="#browseSourcePath" text="选取" />
+      <Label layoutX="26.0" layoutY="39.0" text="源文件目录" />
+      <TextField fx:id="outPutMappingModelText" layoutX="126.0" layoutY="83.0" prefHeight="23.0" prefWidth="371.0" />
+      <Button layoutX="509.0" layoutY="83.0" mnemonicParsing="false" onAction="#browseMappingExportPath" text="选取" />
+      <Label layoutX="26.0" layoutY="87.0" text="有贴图导出目录" />
+      <TextField fx:id="outPutSingleModelText" layoutX="126.0" layoutY="125.0" prefHeight="23.0" prefWidth="371.0" />
+      <Button layoutX="509.0" layoutY="125.0" mnemonicParsing="false" onAction="#browseSingleExportPath" text="选取" />
+      <Label layoutX="26.0" layoutY="129.0" text="无贴图导出目录" />
+      <TextField fx:id="nameIndexText" layoutX="126.0" layoutY="164.0" prefHeight="23.0" prefWidth="174.0" text="8" />
+      <Label layoutX="26.0" layoutY="168.0" text="JPG名称长度" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,57 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+repositories {
+    mavenLocal()    //从本地查找
+    maven { // 阿里云仓库
+        url "http://maven.aliyun.com/nexus/content/groups/public/"
+    }
+    mavenCentral()
+    jcenter()
+}
+dependencies {
+    // https://commons.apache.org/proper/commons-io/download_io.cgi  Apache API 获取文件的扩展名, 用于效验文件格式
+//    implementation("commons-io:commons-io:2.6")
+//    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.1'
+//    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.1'
+
+    // https://pixelduke.com/java-javafx-theme-jmetro/#How_to_get_it  JMetro JavaFX美化主题
+//    compile 'org.jfxtras:jmetro:11.6.9'
+
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-imaging
+    compile group: 'org.apache.commons', name: 'commons-imaging', version: '1.0-alpha1'
+
+
+    // https://mvnrepository.com/artifact/commons-io/commons-io commons工具集合
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api 测试工具包
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.0.0'
+
+    // https://mvnrepository.com/artifact/com.drewnoakes/metadata-extractor EXIF 照片属性解析工具
+    compile group: 'com.drewnoakes', name: 'metadata-extractor', version: '2.11.0'
+
+    // https://mvnrepository.com/artifact/org.apache.poi/poi Excel解析工具
+    compile group: 'org.apache.poi', name: 'poi', version: '4.1.2'
+    // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.2'
+    // https://mvnrepository.com/artifact/javax.mail/mail 发送邮件 方案1
+    compile group: 'javax.mail', name: 'mail', version: '1.4.7'
+    // https://mvnrepository.com/artifact/javax.activation/activation   发送邮件 方案1
+    compile group: 'javax.activation', name: 'activation', version: '1.1.1'
+
+
+
+
+
+}
+run{
+    mainClassName = "com.ambit.app.App"
+}
+
+javafx {
+    version = "13"
+    modules = [ 'javafx.fxml','javafx.controls','javafx.web','javafx.base','javafx.graphics','javafx.media','javafx.swing'] // ""
+}

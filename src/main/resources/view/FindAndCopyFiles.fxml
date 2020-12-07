@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ambit.app.controller.FindAndCopyFiles">
+   <children>
+      <TextField fx:id="importFolder" layoutX="14.0" layoutY="45.0" prefHeight="23.0" prefWidth="442.0" />
+      <Button layoutX="485.0" layoutY="45.0" mnemonicParsing="false" onAction="#selectFolder1" text="选取文档所在目录" />
+      <Button layoutX="262.0" layoutY="171.0" mnemonicParsing="false" onAction="#start" text="执行" />
+      <TextField fx:id="outputText" layoutX="14.0" layoutY="139.0" prefHeight="23.0" prefWidth="442.0" />
+      <Button layoutX="488.0" layoutY="139.0" mnemonicParsing="false" onAction="#selectFolder3" text="选取导出目录" />
+      <Button layoutX="488.0" layoutY="96.0" mnemonicParsing="false" onAction="#selectFolder2" text="选取源文件夹" />
+      <TextField fx:id="sourceFolderText" layoutX="14.0" layoutY="96.0" prefHeight="23.0" prefWidth="442.0" />
+      <TextArea editable="false" layoutX="14.0" layoutY="243.0" prefHeight="387.0" prefWidth="580.0" text="* 文档所在目录: &#10;所选文件夹下包含多个txt文本文档,文档中每行的内容是文件的名称(没有后缀!)&#10;例如:&#10;Tile_+024_+021&#10;Tile_+025_+021&#10;...&#10;Tile_+029_+019&#10;Tile_+029_+020&#10;-----------------------------------------------------------------------------------------------------&#10;* 源文件夹:&#10;所选文件夹下应当包含需要查找的文件,查找规则通过名称,格式不限&#10;-----------------------------------------------------------------------------------------------------&#10;* 导出目录&#10;选择一个目录,当查找到文件时,程序自动在该目录下以文档名称创建一个文件夹,&#10;并把找到的文件复制到该文件夹下&#10;例如: &#10;文档名称: 15-NW-2.txt → 在目标文件夹下创建&quot;15-NW-2&quot;文件夹&#10;最终得到的目录结构是:&#10;15-NW-2&#10;  -Tile_+024_+021.las&#10;  -Tile_+025_+021.las&#10;  -...&#10;  -Tile_+029_+019.las&#10;  -Tile_+029_+020.las" />
+   </children>
+</AnchorPane>
