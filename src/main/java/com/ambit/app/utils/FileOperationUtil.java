@@ -33,7 +33,7 @@ public class FileOperationUtil {
      * @throws IOException
      */
     public static void copyFileUsingFileStreams(File source, File dest)throws IOException{
-        // 如果文件不存在则创建
+        // 如果目录不存在则创建
         if (!dest.getParentFile().exists()){
             dest.getParentFile().mkdirs();
         }

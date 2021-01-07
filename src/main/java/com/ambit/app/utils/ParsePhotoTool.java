@@ -4,6 +4,9 @@ import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,4 +60,22 @@ public class ParsePhotoTool {
 		return photoList;
 	}
 
+	public static String convertFileToHex(Path path) throws IOException {
+
+		if (Files.notExists(path)) {
+			throw new IllegalArgumentException("File not found! " + path);
+		}
+
+		StringBuilder result = new StringBuilder();
+		StringBuilder hex = new StringBuilder();
+
+		int value;
+		try (InputStream inputStream = Files.newInputStream(path)) {
+			while ((value = inputStream.read()) != -1) {
+				hex.append(String.format("%02X ", value));
+			}
+			result.append(String.format("%-60s", hex));
+		}
+		return result.toString();
+	}
 }

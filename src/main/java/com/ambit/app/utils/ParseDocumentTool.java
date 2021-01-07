@@ -53,7 +53,37 @@ public class ParseDocumentTool {
 		}
 		return fileMap;
 	}
+	/**
+	 * 递归获取文件夹下的所有文件
+	 * @param folderFile
+	 * @param fileList<"文件映射對象">
+	 * @param type : 文件类型匹配 （*：不限制， txt: 匹配txt, las: 匹配las .....）
+	 * @return
+	 */
+	public static List<File> getAllFiles(File folderFile, List<File> fileList, final String type){
+		File[] files = folderFile.listFiles();
+		String extension;
 
+		if (null == files){
+			return fileList;
+		}
+
+		for (File f1: files){
+			if(f1.isFile()){
+				if ("*".equals(type)){
+					fileList.add(f1);
+					continue;
+				}
+				extension = FilenameUtils.getExtension(f1.getName());
+				if(extension.toLowerCase().equals(type.toLowerCase())){
+					fileList.add(f1);
+				}
+			}else if(f1.isDirectory()){
+				fileList = getAllFiles(f1, fileList, type);
+			}
+		}
+		return fileList;
+	}
 
 	/**
 	 * 递归解析文件夹下的所有txt文档及其内容
@@ -78,6 +108,29 @@ public class ParseDocumentTool {
 			}
 		}
 		return txtMap;
+	}
+
+	/**
+	 * 遍历读取指定文件夹下的所有文件(非递归)
+	 * @param folderFile
+	 * @param fileList
+	 * @param type：指定文件后缀（如"jpg"/"cr2")不区分大小写，不需要加“.”
+	 */
+	public static void getAllFilesByFormat(File folderFile, List<File> fileList, final String type){
+		File[] files = folderFile.listFiles();
+		String extension;
+		for (File f1: files){
+			if(f1.isFile()){
+				if ("*".equals(type)){
+					fileList.add(f1);
+					continue;
+				}
+				extension = FilenameUtils.getExtension(f1.getName());
+				if(extension.toLowerCase().equals(type.toLowerCase())){
+					fileList.add(f1);
+				}
+			}
+		}
 	}
 
 	/**
